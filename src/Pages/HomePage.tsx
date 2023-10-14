@@ -25,7 +25,7 @@ export default function HomePage() {
   
     return (
      <div className='w-full flex flex-col justify-center items-center p-8  text-black'>
-      <div className=" flex justify-around items-center w-full">
+      <div className=" lg:flex-row lg:justify-around lg:items-center flex flex-col  w-full">
         <h1 className='flex justify-center items-center pb-8 text-3xl text-blue-900 font-bold'>SOCCER DAILY</h1>
 <div className='flex space-x-4'>
     <Link to="/create" className='border p-3 bg-black text-blue-500 border-none rounded-lg mb-8'> Create Post</Link>

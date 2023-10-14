@@ -36,24 +36,24 @@ const navigate = useNavigate ()
         <div className=" flex-col justify-center items-center h-screen ">
 <h1 className="flex justify-center items-center p-8 text-lg font-bold" >Edit Post</h1>
 <form  className="space-y-6 flex flex-col justify-center items-center pb-8" onSubmit={handleEdit}>
-    <div>
+    <div className="lg:flex flex flex-col">
         <label htmlFor="title">Title :</label>
 <input type="text" placeholder="Add title" name ='title' value={eTitle} onChange={e => setTitle(e.target.value)} className="m-2 p-2 border rounded-lg w-[300px]"  />
 </div>
 
-<div>
+<div className="lg:flex flex flex-col">
         <label htmlFor="author">Author :</label>
 <input type="text"   placeholder="Add name"  name = 'author' value={eAuthor} onChange={e => setAuthor(e.target.value)}  className="m-2 p-2 border rounded-lg w-[300px] "/>
 </div>
 
-<div>
+<div className="lg:flex flex flex-col" >
         <label htmlFor="date">Date :</label>
 <input type="date"   placeholder="select date" name = 'date' value={eDate} onChange={e => setDate(e.target.value)} className="m-2 p-2 border rounded-lg w-[300px]" />
 </div>
 
 <div className="flex flex-col justify-center items-center">
         <label htmlFor="content" className="font-bold text-lg" >Post </label>
-<textarea  placeholder="Add blog post" name = 'content' value={eContent} onChange={e => setContent(e.target.value)} className="m-2 border rounded-lg  w-[700px] h-[250px] p-4"/>
+<textarea  placeholder="Add blog post" name = 'content' value={eContent} onChange={e => setContent(e.target.value)} className="m-2 border rounded-lg lg:w-[700px] w-[300px] h-[150px] lg:h-[250px]  p-4"/>
 </div>
 
 
