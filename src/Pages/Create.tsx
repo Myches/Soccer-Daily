@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import { addPost } from "../Components/PostReducer"
 import { useDispatch } from "react-redux"
 import {  useSelector } from 'react-redux/es/hooks/useSelector'
@@ -16,7 +16,7 @@ export default function Create() {
 const dispatch = useDispatch()
 const navigate = useNavigate()
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         dispatch(addPost ({id:posts[posts.length-1].id + 1 , title ,date, author , content}))
         navigate ('/')

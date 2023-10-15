@@ -5,13 +5,24 @@ import { editPost } from "../Components/PostReducer"
 import { useDispatch } from "react-redux"
 
 
+
+interface Post {
+    id: number;
+    title: string;
+    author: string;
+    date: string;
+    content: string;
+  }
+
+
+
 export default function Edit() {
 
         const dispatch = useDispatch();
     const {id} = useParams ()
-    const posts:any = useSelector((state:any) => state.posts )
-const existingPost = posts.filter (f => f.id == id)
-const {title,author,date,content} = existingPost[0]
+    const posts : Post[]= useSelector((state: { posts: Post[] } ) => state.posts )
+    const existingPost = posts.filter((f) => f.id == Number(id))[0];
+const {title,author,date,content} = existingPost
 
 const [eTitle, setTitle] = useState (title)
     const [eAuthor, setAuthor] = useState (author)
@@ -19,7 +30,7 @@ const [eTitle, setTitle] = useState (title)
     const [eContent, setContent] = useState (content)
 
 const navigate = useNavigate ()
-    const handleEdit = (event) => {
+    const handleEdit = (event: React.FormEvent<HTMLFormElement>) => {
 
         event.preventDefault();
         dispatch(editPost({id :id,

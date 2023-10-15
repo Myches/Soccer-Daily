@@ -1,11 +1,16 @@
-import React from 'react'
 import {  useSelector } from 'react-redux/es/hooks/useSelector'
 import { useDispatch } from "react-redux"
 import {Link} from 'react-router-dom'
 import { deletePost } from '../Components/PostReducer'
 
 
-
+interface Post {
+  id: number;
+  title: string;
+  author: string;
+  date: string;
+  content: string;
+}
 
 
 
@@ -14,12 +19,12 @@ export default function HomePage() {
 
   
 
-    const posts:any = useSelector((state:any) => state.posts )
+  const posts: Post[] = useSelector((state: { posts: Post[] }) => state.posts);
     
 
     const dispatch = useDispatch()
-  const handleDelete = (id) => {
-    dispatch (deletePost ({id:id}))
+  const handleDelete = (id :number) => {
+    dispatch (deletePost ({id}))
   }
 
   

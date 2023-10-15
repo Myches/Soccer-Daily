@@ -1,10 +1,17 @@
-import React from 'react'
 import { useSelector } from 'react-redux/es/hooks/useSelector'
 import {Link} from 'react-router-dom'
 
+
+interface Post {
+    id: number;
+    title: string;
+    content: string;
+  }
+
+
 export default function ViewBlogs () {
 
-    const posts:any = useSelector((state:any) => state.posts )
+    const posts: Post[] = useSelector((state: { posts: Post[] }) => state.posts);
 
 
     return (
